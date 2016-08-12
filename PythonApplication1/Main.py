@@ -1,5 +1,5 @@
 
-unsorted = [57, 94, 10, 86, 120]
+unsorted = [57, 94, 10, 86, 120, 8, 5, 12]
 
 #QUICKSORT IN PYTHON.   AVERAGE CASE O(n log n).  WORST CASE O(n^2), but very rare.
 def partition(list, lo, hi):
@@ -20,7 +20,6 @@ def partition(list, lo, hi):
         return i
 def quickSort(list, lo, hi):
   if lo < hi:     #if lo >= hi than the indices have already met
-    partition(list, 0, len(list)-1)
     p = partition(list, lo, hi)
     quickSort(list, lo, p-1)    #Recursive call to sort lower array
     quickSort(list, p, hi)      #Recursive call to sort higher array
