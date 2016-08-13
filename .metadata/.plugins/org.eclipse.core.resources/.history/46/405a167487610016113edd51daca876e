@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Tester {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> data = new ArrayList<Integer>();
+		
+		data.add(90);
+		data.add(15);
+		data.add(4);
+		data.add(27);
+		data.add(52);
+		data.add(87);
+		data.add(2);
+		data.add(14);
+		Sorter mySorter = new Sorter(data);
+		
+		mySorter.quickSort(data, 0, 9);
+		
+		for(int i = 0; i < data.size(); i++)
+		{
+			System.out.print(data.get(i) + " ");
+		}
+
+	}
+
+}

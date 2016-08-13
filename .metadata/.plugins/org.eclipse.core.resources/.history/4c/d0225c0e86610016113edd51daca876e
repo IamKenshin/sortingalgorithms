@@ -1,0 +1,44 @@
+import java.util.*;
+public class Sorter {
+	ArrayList<Integer> myList;
+	public Sorter(ArrayList<Integer> data)
+	{
+		myList = data;
+	}
+	
+	public void quickSort(ArrayList<Integer> data, int left, int right)
+	{
+		int pivot = partition(data, left, right);
+		if(left < pivot-1)
+			partition(data, left, pivot-1);
+		if(right > pivot)	
+		partition(data, pivot, right);
+	}
+	
+	public int partition(ArrayList<Integer> data, int left, int right)
+	{
+		Integer p = data.get((left + right)/2);
+		while(left <= right)
+		{
+			while(data.get(left).compareTo(p) < 0)
+			{
+				left++;
+			}
+			while(data.get(right).compareTo(p) > 0)
+			{
+				right--;
+			}
+			if( left <= right)
+			{
+				Integer tmp = data.get(left);
+				data.set(left, data.get(right));
+				data.set(right, tmp);
+				left++;
+				right--;
+			}
+			
+			
+		}
+		return left;
+	}
+}
