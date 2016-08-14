@@ -6,9 +6,6 @@ public class Sorter {
 		myList = data;
 	}
 	
-	//Quicksort has an average case of O(n log n).  In the worst case, it will be O(n^2), but this is very rare.
-	//In most cases, it is a quick and efficient sorting algorithm.
-	//This specific implementation sorts the ArrayList in place instead of creating sub-arrays.
 	public void quickSort(ArrayList<Integer> data, int left, int right)
 	{
 		int pivot = partition(data, left, right);
