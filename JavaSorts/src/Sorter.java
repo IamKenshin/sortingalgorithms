@@ -46,4 +46,50 @@ public class Sorter {
 		}
 		return i;
 	}
+	
+	public ArrayList<Integer> mergeSort(ArrayList<Integer> data){
+		ArrayList<Integer> left = new ArrayList<Integer>();
+		ArrayList<Integer> right = new ArrayList<Integer>();
+		int mid;
+		if(data.size() <= 1){
+			return data;
+		}
+		else
+			mid = data.size()/2;
+		
+		for(int i = 0; i <= mid-1; i++){
+			left.add(data.get(i));
+		}
+		for(int j = mid; j < data.size();j++){
+			right.add(data.get(j));
+		}
+		
+		left = mergeSort(left);
+		right = mergeSort(right);
+		if(left.get(left.size()-1) <= right.get(0)){
+			left.addAll(right);
+			return left;
+		}
+		return merge(left, right);
+		
+	}
+	
+	public ArrayList<Integer> merge(ArrayList<Integer> left, ArrayList<Integer> right){
+		ArrayList<Integer> sorted = new ArrayList<Integer>();
+		while(left.size() > 0 && right.size() > 0){
+			if(left.get(0) <= right.get(0)){
+				sorted.add(left.get(0));
+				left.remove(0);
+			}
+			else{
+				sorted.add(right.get(0));
+				right.remove(0);
+			}
+		}
+		if(left.size() > 0)
+			sorted.addAll(left);
+		if(right.size() > 0)
+			sorted.addAll(right);
+		return sorted;
+	}
 }

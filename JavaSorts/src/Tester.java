@@ -24,8 +24,8 @@ public class Tester {
 			System.out.print(data.get(i) + " ");
 		}
 		
-		mySorter.quickSort(data, 0, data.size()-1);
-		
+		//mySorter.quickSort(data, 0, data.size()-1);
+		data = mySorter.mergeSort(data);
 		System.out.println();
 		
 		for(int i = 0; i < data.size(); i++)
